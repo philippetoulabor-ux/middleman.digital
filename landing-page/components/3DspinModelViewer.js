@@ -70,6 +70,8 @@ export default function SpinModelViewer({
   modelScale = 1,
   /** Kamera-Abstand (Standard 3.5). Kleiner = Modell wirkt größer (z. B. 2.8), größer = kleiner. */
   cameraDistance = 1,
+  /** Nach dem Zentrieren: Verschiebung in X (positiv = weiter rechts im Bild). */
+  modelOffsetX = 0,
 }) {
   const containerRef = useRef(null)
   const [loadState, setLoadState] = useState({ status: "loading", progress: 0 })
@@ -225,6 +227,7 @@ export default function SpinModelViewer({
         modelGroup = new THREE.Group()
         if (gltf.scene) modelGroup.add(gltf.scene)
         modelGroup = centerAndScaleModel(modelGroup, w / h, cameraDistance, modelScale)
+        if (modelOffsetX) modelGroup.position.x += modelOffsetX
         scene.add(modelGroup)
 
         rotX = 0
@@ -259,7 +262,7 @@ export default function SpinModelViewer({
       }
       if (wrapper.parentNode) wrapper.parentNode.removeChild(wrapper)
     }
-  }, [modelUrl, rimColor, rimIntensity, modelScale, cameraDistance])
+  }, [modelUrl, rimColor, rimIntensity, modelScale, cameraDistance, modelOffsetX])
 
   return (
     <div

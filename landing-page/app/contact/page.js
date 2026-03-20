@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from 'react'
 import dynamic from 'next/dynamic'
 import { logoConfig } from '@/lib/landing-config'
+import { contactContent } from '@/content/contact'
 
 const LogoViewer = dynamic(
   () => import('@/components/LogoViewer'),
@@ -79,7 +80,7 @@ export default function ContactPage() {
             <textarea
               ref={textareaRef}
               className="contact-textarea"
-              placeholder="text me :)"
+              placeholder={contactContent.textareaPlaceholder}
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               rows={8}
@@ -93,7 +94,7 @@ export default function ContactPage() {
                   onChange={handleFileChange}
                   className="contact-file-input"
                 />
-                + Bilder / Videos
+                {contactContent.attachLabel}
               </label>
             </div>
             {files.length > 0 && (
@@ -105,7 +106,7 @@ export default function ContactPage() {
                       type="button"
                       className="contact-file-remove"
                       onClick={() => removeFile(i)}
-                      aria-label="Entfernen"
+                      aria-label={contactContent.removeLabel}
                     >
                       ×
                     </button>
@@ -117,7 +118,7 @@ export default function ContactPage() {
           <input
             type="email"
             className="contact-input"
-            placeholder="Email"
+            placeholder={contactContent.emailPlaceholder}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
@@ -127,16 +128,16 @@ export default function ContactPage() {
             className="contact-send"
             disabled={sending}
           >
-            {sending ? '…' : 'SEND'}
+            {sending ? '…' : contactContent.submitLabel}
           </button>
           {status === 'success' && (
             <p className="contact-status contact-status-success">
-              Nachricht wurde gesendet.
+              {contactContent.successMessage}
             </p>
           )}
           {status === 'error' && (
             <p className="contact-status contact-status-error">
-              Fehler beim Senden. Bitte versuchen Sie es erneut.
+              {contactContent.errorMessage}
             </p>
           )}
         </form>
