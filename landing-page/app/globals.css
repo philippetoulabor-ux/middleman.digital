@@ -25,9 +25,11 @@ header {
   flex-shrink: 0;
 }
 
-/* kleineres Logo auf der ls-candle Projektseite */
+/* kleineres Logo auf der ls-candle- und clay-Projektseite */
 .page-ls-candle #logo-container,
-.page-ls-candle .logo-placeholder {
+.page-ls-candle .logo-placeholder,
+.page-clay #logo-container,
+.page-clay .logo-placeholder {
   width: 8vw;
   height: 8vw;
   min-width: 56px;
@@ -259,8 +261,9 @@ header {
   min-height: 60vh;
 }
 
-/* ls-candle: Hintergrund kerze_web/background-black.jpg */
-.page-ls-candle {
+/* ls-candle & clay: Hintergrund kerze_web/background-black.jpg */
+.page-ls-candle,
+.page-clay {
   --ls-candle-pad-inline: clamp(1.1rem, 3.75vw, 2.25rem);
   --ls-candle-pad-block: clamp(1.25rem, 4vw, 2.5rem);
   display: flex;
@@ -275,7 +278,8 @@ header {
   background-repeat: no-repeat;
 }
 
-.page-ls-candle > header {
+.page-ls-candle > header,
+.page-clay > header {
   flex-shrink: 0;
 }
 
@@ -294,7 +298,8 @@ header {
 }
 
 /* Spalte: Zeile (Video+Modell) wirklich vertikal in der Resthöhe unter dem Logo zentrieren */
-.page-ls-candle .project-page-main {
+.page-ls-candle .project-page-main,
+.page-clay .project-page-main {
   flex: 1;
   min-height: 0;
   overflow: hidden;

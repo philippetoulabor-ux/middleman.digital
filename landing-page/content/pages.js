@@ -14,6 +14,10 @@ export const pageMeta = {
     title: "LScandle",
     description: "",
   },
+  clay: {
+    title: "clay",
+    description: "",
+  },
 }
 
 export function getPageMeta(slug) {

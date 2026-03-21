@@ -28,7 +28,8 @@ export const projects = [
     slug: "projekt-b",
     name: "mm-series",
     category: "FURNITURE",
-    preview: "/web/step_web/IMG_9586.jpg",
+    preview:
+      "/web/mm-series/WhatsApp%20Image%202025-02-17%20at%2019.34.23%20Kopie.jpeg",
     href: "/projekt-b",
   },
   {
@@ -46,11 +47,11 @@ export const projects = [
     href: "/projekt-c",
   },
   {
-    slug: "projekt-d",
+    slug: "clay",
     name: "clay",
     category: "CERAMICS",
-    preview: "/web/clay_web/DSCF5185.png?v=2",
-    href: "/projekt-d",
+    preview: "/web/clay_web/IMG_7627.jpg",
+    href: "/clay",
   },
   {
     slug: "ls-candle",
